@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+$font-en: 'Hind', sans-serif;
+$font-ja: 'Noto Sans JP', sans-serif;
+
+$main: #f2f4f1;
+$text: #565956;
+$back: #F2F4F1;
+
+$breakpoints: (
+  'sp': "(max-width: 767px)", 
+  'tab': "(min-width: 768px) and (max-width:1279px)", 
+  'pc': "(min-width: 1280px)"
+) !default;
+
+@mixin mq($breakpoint: sp) {
+		@media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

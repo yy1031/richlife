@@ -1,0 +1,257 @@
+@use "variable";
+
+.campaign{
+   background-color: variable.$main;
+   padding: 48px 0;
+   .container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include variable.mq(tab){
+         max-width: 900px;
+      }
+      @include variable.mq(){
+         max-width: 400px;
+      }
+   }
+}
+.campaign-imgs{
+   width: calc(166 / 1440 * 100%);
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row-reverse;
+   align-items: center;
+   @include variable.mq(){
+      display: block;
+      width: 7%;
+   }
+}
+.campaign-imgs-left{
+   margin-right: 16px;
+}
+.campaign-imgs-right{
+   margin-left: 16px;
+}
+.campaign-backimg1{
+   width: 30%;
+   height: auto;
+   @include variable.mq(){
+      width: 100%;
+   }
+}
+.campaign-backimg2{
+   width: 42%;
+   height: auto;
+
+   @include variable.mq(){
+      width: 100%;
+      margin-bottom: 16px;
+   }
+}
+.campaign-backimg3{
+   width: 42%;
+   height: auto;
+   @include variable.mq(){
+      width: 100%;
+   }
+   img{
+      transform: rotate(180deg);
+   }
+}
+.campaign-backimg4{
+   width: 30%;
+   height: auto;
+   @include variable.mq(){
+      width: 100%;
+      margin-bottom: 16px;
+   }
+   img{
+      transform: rotate(180deg);
+   }
+}
+.campaign-content{
+   background-color: #fff;
+   padding: 49px 80px 42px;
+   text-align: center;
+   width: 714px;
+   @include variable.mq(tab){
+      padding: 36px 32px;
+      width: 507px;
+   }
+   @include variable.mq(){
+      padding: 36px 24px;
+      width: 287px;
+   }
+}
+.campaign-title1{
+   font-size: 28px;
+   margin-bottom: 22px;
+   position: relative;
+   @include variable.mq(tab){
+      font-size: 24px;
+   }
+   @include variable.mq(){
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+   }
+   &::after{
+      position: absolute;
+      content: "今だけ！";
+      color: #fff;
+      background-color: variable.$text;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 3px 6px;
+      transform: rotate(-26.35deg);
+      left: -28px;
+      top: 0;
+      @include variable.mq(tab){
+         top: -19px;
+      }
+      @include variable.mq(){
+         top: -33px;
+         left: -21px;
+      }
+   }
+}
+.campaign-title2{
+   font-size: 32px;
+   margin-bottom: 32px;
+   @include variable.mq(tab){
+      font-size: 24px;
+   }
+   @include variable.mq(){
+      font-size: 20px;
+      line-height: 1.4;
+   }
+   span{
+      font-size: 28px;
+      font-family: variable.$font-en;
+      @include variable.mq(){
+         font-size: 24px;
+      }
+      strong{
+         font-size: 40px;
+      }
+   }
+}
+.campaign-tags{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 42px;
+   gap: 20px;
+   @include variable.mq(tab){
+      gap: 8px;
+   }
+   @include variable.mq(){
+      gap: 11px;
+      margin-bottom: 12px;
+   }
+}
+
+.campaign-tag{
+   color: #fff;
+   background-color: variable.$text;
+   line-height: 36px;
+   padding: 0 18px;
+   border-radius: 16px;
+   @include variable.mq(tab){
+      font-size: 14px;
+      padding: 0 12px;
+   }
+   @include variable.mq(){
+      font-size: 14px;
+      line-height: 20px;
+      padding: 8px 13px;
+      &.is-sp{
+         width: 100%;
+         margin-bottom: 32px;
+      }
+   }
+}
+.campaign-btns{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   @include variable.mq(){
+      display: block;
+   }
+}
+.campaign-btn-left{
+   font-size: 20px;
+   line-height: 1.8;
+   padding: 15px 40px;
+   background-color: variable.$main;
+   position: relative;
+   @include variable.mq(tab){
+      font-size: 16px;
+      padding: 15px 28px;
+   }
+   @include variable.mq(){
+      font-size: 16px;
+      margin-bottom: 24px;
+      padding: 6px 0;
+   }
+   &::after{
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      border-left: 29px solid variable.$main;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -18px;
+      @include variable.mq(){
+         border-style: solid;
+         border-width: 16px 5px 0 5px;
+         border-color: variable.$main transparent transparent transparent;
+         left: 50%;
+         transform: translateX(-50%);
+         top: calc(100% - 2px);
+      }
+   }
+   span{
+      position: relative;
+      &::before, &::after{
+         position: absolute;
+         content: "";
+         width: 16px;
+         height: 1px;
+         top: 50%;
+         transform: translateY(-50%);
+         background-color: variable.$text;
+      }
+      &::before{
+         left: -22px;
+         transform: rotate(60deg);
+      }
+      &::after{
+         transform: rotate(-60deg);
+         right: -22px;
+      }
+   }
+}
+
+.campaign-btn{
+   a{
+      font-size: 24px;
+      line-height: 1.5;
+      color: #fff;
+      background: linear-gradient(86.83deg, #669988 3%, #668899 97%);
+      border-radius: 16px;
+      padding: 28px 28px 28px 36px;
+      @include variable.mq(tab){
+         font-size: 20px;
+         padding: 24px 22px;
+      }
+      @include variable.mq(){
+         font-size: 18px;
+         padding: 15px 16px;
+         width: 100%;
+         display: inline-block;
+      }
+   }
+}

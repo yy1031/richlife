@@ -1,0 +1,129 @@
+@use "variable";
+
+.faq-list{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   @include variable.mq(){
+      display: block;
+   }
+
+}
+
+.faq-list-inner{
+   width: calc((100% - 20px) / 2);
+   @include variable.mq(){
+      width: 100%;
+   }
+}
+
+.faq-item{
+   width: 100%;
+   font-size: 18px;
+   font-weight: 500;
+   line-height: 1.44;
+   @include variable.mq(){
+      font-size: 14px;
+   }
+}
+
+.faq-item-q, .faq-item-a{
+   padding-bottom: 24px;
+   padding-left: 45px;
+   padding-top: 26px;
+}
+.faq-item-q{
+   border-bottom: 1px solid #4B5049;
+   padding-right: 45px;
+   position: relative;
+   &::before{
+      position: absolute;
+      content: "Q";
+      font-size: 18px;
+      color: #998866;
+      font-family: variable.$font-en;
+      left: 10px;
+      top: calc(50% + 2px);
+      transform: translateY(-50%);
+   }
+}
+
+.faq-item-a{
+   position: relative;
+   display: none;
+   &.is-open{
+      display: inline-block;
+   }
+   &::before{
+      position: absolute;
+      content: "A";
+      font-size: 18px;
+      color: #998866;
+      font-family: variable.$font-en;
+      left: 10px;
+      top: calc(50% + 2px);
+      transform: translateY(-50%);
+   }
+}
+
+.faq-item-icon{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 15px;
+}
+.faq-item-bar1, .faq-item-bar2{
+   position: absolute;
+   width: 16px;
+   height: 2px;
+   background-color: #998866;
+   right: 0;
+   top: 0;
+}
+.faq-item-bar2{
+   transform: rotate(90deg);
+
+   &.is-open{
+      transform: rotate(0);
+   }
+}
+
+.faq-btn{
+   text-align: center;
+   margin-top: 58px;
+   height: 69px;
+   @include variable.mq(){
+      height: 42px;
+      margin-top: 28px;
+   }
+   a{
+      color: #fff;
+      background-color: #669988;
+      padding: 0 100px 0 84px;
+      line-height: 69px;
+      border-radius: 32px;
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+      @include variable.mq(){
+         font-size: 16px;
+         line-height: 42px;
+         padding: 0 46px 0 34px;
+      }
+      &::after{
+         position: absolute;
+         content: "";
+         width: 12px;
+         height: 15px;
+         background: url(../img/arrow_white.svg) no-repeat center center / contain;
+         top: 50%;
+         transform: translateY(-50%);
+         right: 77px;
+         @include variable.mq(){
+            width: 7px;
+            height: 10.5px;
+            right: 25px;
+         }
+      }
+   }
+}

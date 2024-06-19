@@ -1,0 +1,246 @@
+@use "variable";
+@use "header";
+@use "top";
+@use "campaign";
+@use "reason";
+@use "voice";
+@use "solution";
+@use "scene";
+@use "feature";
+@use "use";
+@use "faq";
+
+body{
+   color: #565956;
+   font-size: 16px;
+   font-weight: bold;
+   font-family: variable.$font-ja;
+}
+.container{
+   max-width: 1440px;
+   padding: 0 130px;
+   margin: 0 auto;
+   @include variable.mq(tab){
+      padding: 0 50px;
+   }
+   @include variable.mq(){
+      padding: 0 12px;
+   }
+}
+
+.is-pc{
+   @include variable.mq(){
+      display: none !important;
+   }
+}
+.is-sp{
+   @include variable.mq(pc){
+      display: none !important;
+   }
+   @include variable.mq(tab){
+      display: none !important;
+   }
+}
+section{
+   padding: 80px 0;
+   @include variable.mq(){
+      padding: 32px 0;
+   }
+}
+.section-title{
+   font-weight: normal;
+   font-size: 24px;
+   line-height: 1.33;
+   text-align: center;
+   margin-bottom: 58px;
+   @include variable.mq(){
+      font-size: 20px;
+      line-height: 1.45;
+      @include variable.mq(){
+         margin-bottom: 28px;
+      }
+   }
+   p{
+      &:nth-child(2){
+         padding-top: 12px;
+         margin-top: 12px;
+         position: relative;
+         font-family: variable.$font-en;
+         @include variable.mq(){
+            padding-top: 8px;
+            margin-top: 8px;
+         }
+         &::after{
+            position: absolute;
+            content: "";
+            width: 160px;
+            height: 1px;
+            background-color: variable.$text;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include variable.mq(){
+               width: 80px;
+            }
+         }
+      }
+   }
+
+}
+
+a{
+   transition: all .3s;
+   &:hover{
+      opacity: 0.8;
+   }
+}
+
+.ad{
+   padding: 10px;
+   padding-bottom: 20px;
+   // background: linear-gradient(to bottom, transparent 0%, transparent 70%, #fff 100%), url(../img/ad_background.png);
+   background: url(../img/ad_background.png);
+   background-repeat: no-repeat;
+   background-position: top center;
+   background-size: cover;
+   @include variable.mq(){
+      padding-bottom: 170px;
+   }
+  
+}
+
+.ad-content{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @include variable.mq(){
+      // gap: 11px;
+   }
+
+}
+.ad-img{
+   width: 158px;
+   @include variable.mq(){
+      width: calc((100% - 189px) / 2);
+   }
+}
+.ad-text{
+   font-size: 24px;
+   line-height: 1.5;
+   text-align: center;
+   font-weight: 400;
+   padding-top: 32px;
+   @include variable.mq(tab){
+      font-size: 20px;
+   }
+   @include variable.mq(){
+      font-size: 16px;
+   }
+   span{
+      font-size: 64px;
+      @include variable.mq(tab){
+         font-size: 42px;
+      }
+      @include variable.mq(){
+         font-size: 32px;
+      }
+      strong{
+         font-weight: 400;
+         font-size: 96px;
+         font-family: variable.$font-en;
+         @include variable.mq(tab){
+            font-size: 60px;
+         }
+         @include variable.mq(){
+            font-size: 48px;
+         }
+      }
+   }
+}
+
+footer{
+   background-color: #565956;
+   padding: 75px 0 32px;
+   color: #fff;
+   @include variable.mq(){
+      padding: 27px 0 16px;
+   }
+   p{
+      font-size: 11px;
+      line-height: 2;
+      &.copyright{
+         font-weight: 400;
+         margin-top: 15px;
+         @include variable.mq(){
+            margin-top: 36px;
+         }
+      }
+   }
+}
+
+.footer-flex{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 86px;
+   flex-wrap: wrap;
+   @include variable.mq(){
+      margin-bottom: 13px;
+   }
+}
+
+.footer-nav{
+   width: 25%;
+   padding-right: 10px;
+   @include variable.mq(){
+      width: 50%;
+      
+      &:nth-child(n + 3){
+         margin-top: 32px;
+      }
+   }
+}
+.footer-nav-title{
+   font-weight: 400;
+   font-size: 18px;
+   font-family: variable.$font-en;
+   line-height: 2;
+   padding-bottom: 7px;
+   position: relative;
+   margin-bottom: 30px;
+   &::after{
+      position: absolute;
+      content: "";
+      width: 72px;
+      height: 1px;
+      background-color: #FFFFFF66;
+      left: 0;
+      bottom: 0;
+   }
+}
+
+.footer-nav-list{
+   a{
+      font-size: 14px;
+      line-height: 1.57;
+      font-weight: 400;
+
+   }
+}
+
+.footer-sns{
+   display: flex;
+   margin-bottom: 92px;
+   li{
+      width: 25px;
+      height: 25px;
+      margin-right: 30px;
+      &:nth-child(2){
+         width: 26px;
+         padding-top: 3px;
+      }
+      &:nth-child(3){
+         width: 12px;
+         padding-top: 2px;
+      }
+   }
+}

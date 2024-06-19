@@ -1,0 +1,96 @@
+@use "variable";
+
+.feature{
+   margin-top: 80px;
+   background: url(../img/feature_back.jpeg) no-repeat center center / cover;
+   @include variable.mq(){
+      margin-top: 32px;
+   }
+}
+.feature-item{
+   background-color: #fff;
+   border-radius: 64px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 30px 100px;
+   @include variable.mq(tab){
+      padding: 30px 48px;
+   }
+
+   @include variable.mq(){
+      display: block;
+      padding: 30px 32px;
+   }
+   @media screen and(max-width: 350px) {
+      padding: 30px 28px;
+   }
+   &:not(:first-child){
+      margin-top: 33px;
+   }
+   &:nth-child(2n){
+      flex-direction: row-reverse;
+   }
+}
+.feature-img{
+   width: calc((100% - 85px) / 2);
+   @include variable.mq(tab){
+      width: calc((100% - 24px) / 2);
+   }
+   @include variable.mq(){
+      width: 100%;
+      margin-bottom: 10px;
+   }
+}
+
+.feature-text{
+   width: calc((100% - 85px) / 2);
+   @include variable.mq(tab){
+      width: calc((100% - 24px) / 2);
+   }
+   @include variable.mq(){
+      width: 100%;
+   }
+}
+
+.feature-num{
+   color: #fff;
+   background-color: #998866;
+   font-size: 20px;
+   line-height: 36px;
+   padding: 0 23px;
+   display: inline-block;
+   font-family: variable.$font-en;
+   font-weight: 400;
+   margin-bottom: 12px;
+   @include variable.mq(){
+      font-size: 18px;
+      line-height: 24px;
+      padding: 0 14px;
+      margin-bottom: 6px;
+   }
+}
+
+.feature-title{
+   font-size: 20px;
+   line-height: 1.44;
+   margin-bottom: 12px;
+   span{
+      font-size: 24px;
+      color: #998866;
+   }
+
+   @include variable.mq(){
+      font-size: 18px;
+   }
+
+}
+
+.feature-content{
+   line-height: 1.44;
+   font-weight: 400;
+   @include variable.mq(){
+      font-size: 14px;
+   }
+}

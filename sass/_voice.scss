@@ -1,0 +1,112 @@
+@use "variable";
+
+.voice{
+   padding-top: 20px;
+   @include variable.mq(){
+      padding-top: 0;
+      margin-top: -150px;
+   }
+   .container{
+      @include variable.mq(tab){
+         padding: 0 20px
+      }
+   }
+}
+.voice-list{
+   display: flex;
+   justify-content: center;
+
+   @include variable.mq(){
+      display: block;
+   }
+}
+
+.voice-item{
+   width: 33.33%;
+   max-width: 368px;
+   position: relative;
+   &:nth-child(2n + 1){
+      background-color: #F2F4F1;
+   }
+   @include variable.mq(){
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
+.voice-tag{
+   background-color: #669988;
+   color: #fff;
+   font-size: 14px;
+   padding: 10px 24px;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.voice-content{
+   padding: 24px 30px;
+   height: 414px;
+   @include variable.mq(tab){
+      padding: 24px 18px;
+      height: 460px;
+   }
+   @include variable.mq(){
+      height: auto;
+   }
+}
+.voice-title{
+   margin-bottom: 15px;
+   p{
+      span{
+         background-color: #998866;
+         color: #fff;
+         font-size: 20px;
+         line-height: 1.4;
+         padding: 5px 9px;
+         display: inline-block;
+         @include variable.mq(tab){
+            font-size: 18px;
+         }
+         @include variable.mq(){
+            font-size: 18px;
+         }
+      }
+
+      &:first-child{
+         margin-bottom: 8px;
+      }
+      &.is-right{
+         @include variable.mq(){
+            text-align: right;
+         }
+      }
+
+   }
+}
+.voice-text{
+   font-weight: normal;
+   line-height: 1.44;
+   margin-bottom: 12px;
+   @include variable.mq(tab){
+      font-size: 14px;
+   }
+   @include variable.mq(){
+      font-size: 14px;
+   }
+}
+.voice-name{
+   position: absolute;
+   bottom: 25px;
+   right: 30px;
+   font-weight: normal;
+   line-height: 1.44;
+   @include variable.mq(tab){
+      font-size: 14px;
+      bottom: 15px;
+   }
+   @include variable.mq(){
+      font-size: 14px;
+      bottom: 15px;
+   }
+}

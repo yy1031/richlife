@@ -1,0 +1,73 @@
+
+@use "variable";
+
+.use-list{
+   display: flex;
+   justify-content: space-between;
+   @include variable.mq(){
+      display: block;
+   }
+}
+.use-item{
+   width: calc((100% - 108px) / 4);
+   @include variable.mq(){
+      width: 100%;
+      display: flex;
+      & + & {
+         margin-top: 16px;
+      }
+   }
+}
+
+.use-img{
+   @include variable.mq(){
+      width: 50%;
+       max-width: 268px;
+       margin-right: 15px;
+   }
+}
+.use-body{
+   @include variable.mq(){
+      width: 50%;
+   }
+}
+
+.use-title{
+   font-size: 20px;
+   line-height: 1.44;
+   text-align: center;
+   margin-top: 26px;
+   position: relative;
+   margin-bottom: 14px;
+   @include variable.mq(tab){
+      font-size: 16px;
+   }
+   @include variable.mq(){
+      font-size: 18px;
+      padding-top: 42px;
+      text-align: left;
+      margin-top: 0;
+   }
+   span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 24px;
+      font-family: variable.$font-en;
+      color: #669988;
+      @include variable.mq(tab){
+         font-size: 20px;
+      }
+      
+   }
+}
+
+.use-text{
+   font-size: 16px;
+   line-height: 1.44;
+   font-weight: 400;
+   @include variable.mq(){
+      font-size: 14px;
+      text-align: left;
+   }
+}
